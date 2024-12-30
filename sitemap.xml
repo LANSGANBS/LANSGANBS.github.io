@@ -2,7 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/posts/16107.html</loc>
+    <loc>https://lansganbs.github.io/posts/784dd132.html</loc>
+    
+    <lastmod>2024-12-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lansganbs.github.io/posts/16107.html</loc>
     
     <lastmod>2024-12-29</lastmod>
     
@@ -12,8 +21,8 @@
   
 
   <url>
-    <loc>http://example.com/</loc>
-    <lastmod>2024-12-29</lastmod>
+    <loc>https://lansganbs.github.io/</loc>
+    <lastmod>2024-12-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

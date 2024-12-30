@@ -3,18 +3,47 @@
   <title>LANSGANBS</title>
   
   <subtitle>红叶最多情 一舞寄相思</subtitle>
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://lansganbs.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
-  <updated>2024-12-29T09:30:12.520Z</updated>
-  <id>http://example.com/</id>
+  <link href="https://lansganbs.github.io/"/>
+  <updated>2024-12-29T10:34:47.236Z</updated>
+  <id>https://lansganbs.github.io/</id>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Test</title>
+    <link href="https://lansganbs.github.io/posts/784dd132.html"/>
+    <id>https://lansganbs.github.io/posts/784dd132.html</id>
+    <published>2024-12-29T10:31:30.000Z</published>
+    <updated>2024-12-29T10:34:47.236Z</updated>
+    
+    <content type="html"><![CDATA[<p>This is a simple test article.</p><ol><li><p>one</p></li><li><p>two</p></li><li><p>three</p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;This is a simple test article.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;one&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;two&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;three&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
-    <link href="http://example.com/posts/16107.html"/>
-    <id>http://example.com/posts/16107.html</id>
+    <link href="https://lansganbs.github.io/posts/16107.html"/>
+    <id>https://lansganbs.github.io/posts/16107.html</id>
     <published>2024-12-29T09:23:10.613Z</published>
     <updated>2024-12-29T09:30:12.520Z</updated>
     
