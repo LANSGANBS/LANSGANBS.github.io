@@ -3,7 +3,7 @@ $.ajax({
     type: 'get',
     url: 'https://apis.map.qq.com/ws/location/v1/ip',
     data: {
-        key: '你的key',
+        key: 'COJBZ-YMB6L-ONRPD-MTKQX-E62TS-ERF5D',
         output: 'jsonp',
     },
     dataType: 'jsonp',
@@ -29,7 +29,7 @@ function getDistance(e1, n1, e2, n2) {
 
 function showWelcome() {
 
-    let dist = getDistance(113.34499552, 23.15537143, ipLoacation.result.location.lng, ipLoacation.result.location.lat); //这里换成自己的经纬度
+    let dist = getDistance(126.61675, 45.712802, ipLoacation.result.location.lng, ipLoacation.result.location.lat); //这里换成自己的经纬度
     let pos = ipLoacation.result.ad_info.nation;
     let ip;
     let posdesc;
@@ -82,7 +82,14 @@ function showWelcome() {
                     posdesc = "我想吃烤鸡架！";
                     break;
                 case "吉林省":
-                    posdesc = "状元阁就是东北烧烤之王。";
+                    switch (ipLoacation.result.ad_info.city) {
+                        case "通化市":
+                            posdesc = "这是我的家乡";
+                            break;
+                        default:
+                            posdesc = "状元阁就是东北烧烤之王。";
+                            break;
+                    }
                     break;
                 case "黑龙江省":
                     posdesc = "很喜欢哈尔滨大剧院。";
