@@ -106,4 +106,10 @@ function codeUnfold() {
         }
     });
 };
-codeUnfold();
+document.addEventListener('DOMContentLoaded', () => {
+    codeUnfold();
+});
+
+window.addEventListener('load', () => {
+    codeUnfold();
+});
