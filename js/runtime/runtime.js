@@ -9,7 +9,7 @@ function createtime() {
     var o = (now - t) / 1e3 - 86400 * a - 3600 * r - 60 * i, l = Math.round(o);
     1 == String(l).length && (l = "0" + l);
     let g = "";
-    g = r < 18 && r >= 9 ? `<img class='boardsign' src='https://npm.elemecdn.com/anzhiyu-blog@2.0.3/img/badge/安知鱼-上班摸鱼中.svg' title='距离月入100k也就还差一个Jiangly带我~'><span class='textTip'> <br> 本站居然运行了 ${a} 天</span><span id='runtime'> ${r} 小时 ${i} 分 ${l} 秒 </span> <i class='fas fa-heartbeat' style='color:red'></i>` : `<img class='boardsign' src='https://npm.elemecdn.com/anzhiyu-blog@2.0.3/img/badge/安知鱼-下班啦.svg' title='下班了就该开开心心的玩耍，嘿嘿~'><span class='textTip'> <br> 本站居然运行了 ${a} 天</span><span id='runtime'> ${r} 小时 ${i} 分 ${l} 秒 </span> <i class='fas fa-heartbeat' style='color:red'></i>`;
+    g = r < 18 && r >= 9 ? `<img class='boardsign' src='' title=''><span class='textTip'> <br> 本站居然运行了 ${a} 天</span><span id='runtime'> ${r} 小时 ${i} 分 ${l} 秒 </span> <i class='fas fa-heartbeat' style='color:red'></i>` : `<img class='boardsign' src='' title=''><span class='textTip'> <br> 本站居然运行了 ${a} 天</span><span id='runtime'> ${r} 小时 ${i} 分 ${l} 秒 </span> <i class='fas fa-heartbeat' style='color:red'></i>`;
     document.getElementById("workboard") && (document.getElementById("workboard").innerHTML = g);
 }
 setInterval(() => { createtime() }, 250);
