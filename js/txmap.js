@@ -29,7 +29,10 @@ function getDistance(e1, n1, e2, n2) {
 
 function showWelcome() {
 
-    let dist = getDistance(125.974348, 41.734034, ipLoacation.result.location.lng, ipLoacation.result.location.lat) - 7; //这里换成自己的经纬度
+    let dist = Math.max(
+        0,
+        getDistance(125.974348, 41.734034, ipLoacation.result.location.lng, ipLoacation.result.location.lat) - 7
+    );
     let pos = ipLoacation.result.ad_info.nation;
     let ip;
     let posdesc;
