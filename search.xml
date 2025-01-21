@@ -61,6 +61,25 @@
     
     
     <entry>
+      <title>复现项目时遇到的相关问题汇总</title>
+      <link href="/posts/dd7a46fd.html"/>
+      <url>/posts/dd7a46fd.html</url>
+      
+        <content type="html"><![CDATA[<ol><li>java:程序包org.aspectj.weaver.reflect不存在</li></ol><p>更新Maven包，并在IDEA中同步所有Maven项目和重新加载所有Maven项目</p><ol><li>aspectjweaver-1.8.13.jar时出错</li></ol><p>右键项目文件夹，在Maven中选择生成源代码并更新文件夹</p><ol><li>base64decoder 找不到符号</li></ol><p>从Java 8开始，应使用java.util.Base64类来处理Base64编码和解码。这个类提供了Base64.Decoder和Base64.Encoder两个嵌套类</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java 8及更高版本使用java.util.Base64</span></span><br><span class="line">Base64.<span class="type">Decoder</span> <span class="variable">decoder</span> <span class="operator">=</span> Base64.getDecoder();</span><br><span class="line"><span class="type">byte</span>[] decodedBytes = decoder.decode(encodedString);</span><br><span class="line"></span><br><span class="line">Base64.<span class="type">Encoder</span> <span class="variable">encoder</span> <span class="operator">=</span> Base64.getEncoder();</span><br><span class="line"><span class="type">String</span> <span class="variable">encodedString</span> <span class="operator">=</span> encoder.encodeToString(byteArray);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 杂谈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>分块莫队</title>
       <link href="/posts/65b2d74f.html"/>
       <url>/posts/65b2d74f.html</url>
@@ -128,10 +147,10 @@
     
     <entry>
       <title></title>
-      <link href="/css/universe.css"/>
-      <url>/css/universe.css</url>
+      <link href="/css/readPercent.css"/>
+      <url>/css/readPercent.css</url>
       
-        <content type="html"><![CDATA[/* 背景宇宙星光  */#universe {    display: block;    position: fixed;    margin: 0;    padding: 0;    border: 0;    outline: 0;    left: 0;    top: 0;    width: 100%;    height: 100%;    pointer-events: none;    /* 这个是调置顶的优先级的，-1在文章页下面，背景上面，个人推荐这种 */    z-index: -1;}]]></content>
+        <content type="html"><![CDATA[/* 返回顶部 */button#go-up #percent {    display: none;    font-weight: bold;    font-size: 15px !important;}button#go-up span {    font-size: 12px !important;    margin-right: -1px;}/* 鼠标滑动到按钮上时显示返回顶部图标 */button#go-up:hover i {    display: block !important;}button#go-up:hover #percent {    display: none !important;}]]></content>
       
     </entry>
     
@@ -139,10 +158,10 @@
     
     <entry>
       <title></title>
-      <link href="/css/readPercent.css"/>
-      <url>/css/readPercent.css</url>
+      <link href="/css/universe.css"/>
+      <url>/css/universe.css</url>
       
-        <content type="html"><![CDATA[/* 返回顶部 */button#go-up #percent {    display: none;    font-weight: bold;    font-size: 15px !important;}button#go-up span {    font-size: 12px !important;    margin-right: -1px;}/* 鼠标滑动到按钮上时显示返回顶部图标 */button#go-up:hover i {    display: block !important;}button#go-up:hover #percent {    display: none !important;}]]></content>
+        <content type="html"><![CDATA[/* 背景宇宙星光  */#universe {    display: block;    position: fixed;    margin: 0;    padding: 0;    border: 0;    outline: 0;    left: 0;    top: 0;    width: 100%;    height: 100%;    pointer-events: none;    /* 这个是调置顶的优先级的，-1在文章页下面，背景上面，个人推荐这种 */    z-index: -1;}]]></content>
       
     </entry>
     
