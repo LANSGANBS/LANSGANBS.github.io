@@ -4,7 +4,7 @@
   <url>
     <loc>https://www.lansganbs.cn/manifest.json</loc>
     
-    <lastmod>2025-03-13</lastmod>
+    <lastmod>2025-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -13,52 +13,7 @@
   <url>
     <loc>https://www.lansganbs.cn/link/index.html</loc>
     
-    <lastmod>2025-03-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.lansganbs.cn/posts/d71d8d32.html</loc>
-    
-    <lastmod>2025-03-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.lansganbs.cn/posts/65b2d74f.html</loc>
-    
-    <lastmod>2025-03-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.lansganbs.cn/posts/e9186a1f.html</loc>
-    
-    <lastmod>2025-03-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.lansganbs.cn/posts/dd7a46fd.html</loc>
-    
-    <lastmod>2025-03-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.lansganbs.cn/posts/fdcab632.html</loc>
-    
-    <lastmod>2025-03-13</lastmod>
+    <lastmod>2025-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -67,7 +22,7 @@
   <url>
     <loc>https://www.lansganbs.cn/posts/1f3637b8.html</loc>
     
-    <lastmod>2025-03-13</lastmod>
+    <lastmod>2025-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -76,7 +31,52 @@
   <url>
     <loc>https://www.lansganbs.cn/posts/ae028ed9.html</loc>
     
-    <lastmod>2025-03-13</lastmod>
+    <lastmod>2025-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.lansganbs.cn/posts/65b2d74f.html</loc>
+    
+    <lastmod>2025-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.lansganbs.cn/posts/d71d8d32.html</loc>
+    
+    <lastmod>2025-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.lansganbs.cn/posts/e9186a1f.html</loc>
+    
+    <lastmod>2025-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.lansganbs.cn/posts/dd7a46fd.html</loc>
+    
+    <lastmod>2025-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.lansganbs.cn/posts/fdad289b.html</loc>
+    
+    <lastmod>2025-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -85,29 +85,22 @@
 
   <url>
     <loc>https://www.lansganbs.cn/</loc>
-    <lastmod>2025-03-13</lastmod>
+    <lastmod>2025-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://www.lansganbs.cn/tags/Useless/</loc>
-    <lastmod>2025-03-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.lansganbs.cn/tags/XCPC/</loc>
-    <lastmod>2025-03-13</lastmod>
+    <lastmod>2025-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.lansganbs.cn/tags/%E6%9D%82%E8%B0%88/</loc>
-    <lastmod>2025-03-13</lastmod>
+    <lastmod>2025-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
