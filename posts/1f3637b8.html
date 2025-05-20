@@ -1,0 +1,605 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Codeforces Round 1000 (Div. 2) D题题解 | LANSGANBS</title><meta name="keywords" content="XCPC"><meta name="author" content="LANSGANBS"><meta name="copyright" content="LANSGANBS"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="D. Game With Triangles Even Little John needs money to buy a house. But he recently lost his job; how will he earn money now? Of course, by playing a game that gives him money as a reward! Oh well, ma">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces Round 1000 (Div. 2) D题题解">
+<meta property="og:url" content="https://www.lansganbs.cn/posts/1f3637b8.html">
+<meta property="og:site_name" content="LANSGANBS">
+<meta property="og:description" content="D. Game With Triangles Even Little John needs money to buy a house. But he recently lost his job; how will he earn money now? Of course, by playing a game that gives him money as a reward! Oh well, ma">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn-1.webcatalog.io/catalog/codeforces/codeforces-icon-filled-256.png?v=1675595107494">
+<meta property="article:published_time" content="2024-01-22T13:37:42.000Z">
+<meta property="article:modified_time" content="2025-01-22T16:28:50.022Z">
+<meta property="article:author" content="LANSGANBS">
+<meta property="article:tag" content="XCPC">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn-1.webcatalog.io/catalog/codeforces/codeforces-icon-filled-256.png?v=1675595107494"><link rel="shortcut icon" href="/img/icon-xiangsu-xingqiu16.png"><link rel="canonical" href="https://www.lansganbs.cn/posts/1f3637b8"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="codeva-U5hBiCxhrf"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="#3b70fc"/><link rel="apple-touch-icon" sizes="180x180" href="/img/siteicon/icon-xiangsu-xingqiu128.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/siteicon/icon-xiangsu-xingqiu32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/siteicon/icon-xiangsu-xingqiu16.png"/><link rel="mask-icon" href="/img/siteicon/icon-xiangsu-xingqiu128.png" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Codeforces Round 1000 (Div. 2) D题题解',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: false,
+  postUpdate: '2025-01-23 00:28:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="css/custom.css" onload="this.media='all'" as="style"><link rel="stylesheet" href="/css/readPercent.css"><span id="fps"></span><script async src="/js/title.js"></script><link rel="stylesheet" href="//at.alicdn.com/t/font_2264842_b004iy0kk2b.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/universe.css"><link rel="stylesheet" href="https://cdn1.tianli0.top/npm/element-ui@2.15.6/packages/theme-chalk/lib/index.css"><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/debounce.css"><link rel="stylesheet" href="/css/cat.css"><script type="text/javascript" src="https://unpkg.zhimg.com/jquery@latest/dist/jquery.min.js"></script><link rel="stylesheet" href="/gitcalendar/css/gitcalendar.css"><div id="myscoll"></div><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="/css/runtime/runtime.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.8/lib/clock.min.css" /><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="LANSGANBS" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://www.helloimg.com/i/2025/01/04/677943139e15f.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw fas fa-home faa-tada"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/bangumis/"><i class="fa-fw fas fa-home faa-tada"></i><span> 追番</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/comments/"><i class="fa-fw fas fa-envelope faa-tada"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><i class="fa-fw fas fa-link faa-tada"></i><span> Link</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn-1.webcatalog.io/catalog/codeforces/codeforces-icon-filled-256.png?v=1675595107494')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">LANSGANBS</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw fas fa-home faa-tada"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/bangumis/"><i class="fa-fw fas fa-home faa-tada"></i><span> 追番</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/comments/"><i class="fa-fw fas fa-envelope faa-tada"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><i class="fa-fw fas fa-link faa-tada"></i><span> Link</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Codeforces Round 1000 (Div. 2) D题题解</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-01-22T13:37:42.000Z" title="发表于 2024-01-22 21:37:42">2024-01-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-01-22T16:28:50.022Z" title="更新于 2025-01-23 00:28:50">2025-01-23</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Codeforces Round 1000 (Div. 2) D题题解"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/2063/problem/D">D. Game With Triangles</a></p>
+<p>Even Little John needs money to buy a house. But he recently lost his job; how will he earn money now? Of course, by playing a game that gives him money as a reward! Oh well, maybe not those kinds of games you are thinking about.</p>
+<p>There are $n+m$ distinct points $(a_{1},0), (a_{2},0), \dots , (a_{n},0), (b_{1},2), (b_{2},2), \dots, (b_{m},2)$ on the plane. Initially, your score is $0$. To increase your score, you can perform the following operation:</p>
+<ul>
+<li>Choose three distinct points which are not <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Collinearity">collinear</a>;</li>
+<li>Increase your score by the area of the triangle formed by these three points;</li>
+<li>Then, erase the three points from the plane.</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://espresso.codeforces.com/5f6a73286fffbc2708f1d388ed58ca5bc0d69d23.png" alt=""> An instance of the game, where the operation is performed twice.</p>
+<p>Let $k_{max}$ be the maximum number of operations that can be performed. For example, if it is impossible to perform any operation, $ k_{max}$ is $0$. Additionally, define $f(k)$ as the maximum possible score achievable by performing the operation <strong>exactly $k$ times</strong>. Here, $f(k)$ is defined for all integers $k$ such that $0 \le k \le k_{max}$.</p>
+<p>Find the value of $k_{max}$, and find the values of $f(x)$ for all integers $x=1,2,\dots,k_{max}$ independently.</p>
+<p><strong>Input</strong></p>
+<p>Each test contains multiple test cases. The first line contains the number of test cases $t$ $(1 \le t \le 3 \cdot 10^4)$. The description of the test cases follows.</p>
+<p>The first line of each test case contains two integers $n$ and $m$ $(1 \le n,m \le 2 \cdot 10^5)$.</p>
+<p>The second line of each test case contains $n$ pairwise distinct integers $a_1,a_2,\ldots,a_n$ — the points on $y=0$ $(-10^9 \le a_i \le 10^9)$.</p>
+<p>The third line of each test case contains $m$ pairwise distinct integers $b_1,b_2,\ldots,b_m$ — the points on $y=2$ $(-10^9 \le b_i \le 10^9)$.</p>
+<p>It is guaranteed that both the sum of $n$ and the sum of $m$ over all test cases do not exceed $2 \cdot 10^5$.</p>
+<p><strong>Output</strong></p>
+<p>For each test case, given that the maximum number of operations is $k_{\max}$, you must output at most two lines:</p>
+<ul>
+<li>The first line contains the value of $k_{\max}$;</li>
+<li>The second line contains $k_{\max}$ integers denoting $f(1),f(2),\ldots,f(k_{\max})$. You are allowed to omit this line if $k_{\max}$ is $0$.</li>
+</ul>
+<p>Note that under the constraints of this problem, it can be shown that all values of $f(x)$ are integers no greater than $10^{16}$.</p>
+<p><strong>Example</strong></p>
+<p><strong>Input</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">1 3</span><br><span class="line">0</span><br><span class="line">0 1 -1</span><br><span class="line">2 4</span><br><span class="line">0 100</span><br><span class="line">-100 -50 0 50</span><br><span class="line">2 4</span><br><span class="line">0 1000</span><br><span class="line">-100 -50 0 50</span><br><span class="line">6 6</span><br><span class="line">20 1 27 100 43 42</span><br><span class="line">100 84 1 24 22 77</span><br><span class="line">8 2</span><br><span class="line">564040265 -509489796 469913620 198872582 -400714529 553177666 131159391 -20796763</span><br><span class="line">-1000000000 1000000000</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>Output</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">2</span><br><span class="line">150 200</span><br><span class="line">2</span><br><span class="line">1000 200</span><br><span class="line">4</span><br><span class="line">99 198 260 283</span><br><span class="line">2</span><br><span class="line">2000000000 2027422256</span><br></pre></td></tr></table></figure>
+<p><strong>Note</strong></p>
+<p>On the first test case, there are $1+3=4$ points $(0,0),(0,2),(1,2),(-1,2)$.</p>
+<p>It can be shown that you cannot perform two or more operations. The value of $k_{\max}$ is $1$, and you are only asked for the value of $f(1)$.</p>
+<p>You can choose $(0,0)$, $(-1,2)$, and $(1,2)$ as the three vertices of the triangle. After that, your score is increased by the area of the triangle, which is $2$. Then, the three points are erased from the plane. It can be shown that the maximum value of your score after performing one operation is $2$. Therefore, the value of $f(1)$ is $2$.</p>
+<p>On the fifth test case, there are $8+2=10$ points.</p>
+<p>It can be shown that you cannot perform three or more operations. The value of $k_{\max}$ is $2$, and you are asked for the values $f(1)$ and $f(2)$.</p>
+<p>To maximize the score with only one operation, you can choose three points $(198\,872\,582,0)$, $(-1\,000\,000\,000,2)$, and $(1\,000\,000\,000,2)$. Then, the three points are erased from the plane. It can be shown that the maximum value of your score after performing one operation is $2\,000\,000\,000$. Therefore, the value of $f(1)$ is $2\,000\,000\,000$.</p>
+<p>To maximize the score with exactly two operations, you can choose the following sequence of operations.</p>
+<ul>
+<li>Choose three points $(-509\,489\,796,0)$, $(553\,177\,666,0)$, and $(-1\,000\,000\,000,2)$. The three points are erased.</li>
+<li>Choose three points $(-400\,714\,529,0)$, $(564\,040\,265,0)$, and $(1\,000\,000\,000,2)$. The three points are erased.</li>
+</ul>
+<p>Then, the score after two operations becomes $2\,027\,422\,256$. It can be shown that the maximum value of your score after performing exactly two operations is $2\,027\,422\,256$. Therefore, the value of $f(2)$ is $2\,027\,422\,256$.</p>
+<p><strong>Solution</strong></p>
+<ol>
+<li>要构造满足非共线的三点，需要从 $y=0$ 的点中选 $2$ 个、$y=2$ 的点中选 $1$ 个，或反过来。</li>
+<li>每次选出的一组三点形成的三角形面积即对应行上选出的 $2$ 点的横坐标之差(因为高度为 $2$，$面积=\frac{1}{2}\times 底\times 高=差\times 1$)。</li>
+<li>先对 $y=0$ 的所有点进行排序，计算“前后配对”的最大差值之和形成前缀数组 $preA$；同理对 $y=2$ 的所有点生成前缀数组 $preB$。$preA[i]$ 表示恰好在 $y=0$ 行完成 $i$ 次“2点配对”操作的总最大面积，同理 $preB[i]$ 针对 $y=2$ 行。</li>
+<li>每次总共做 $k$ 次操作，需要在 $y=0$ 行做 $i$ 次、在 $y=2$ 行做 $(k - i)$ 次，要求 $2i+(k-i) \le n, i+2(k-i) \le m$。</li>
+<li>用三分搜索或其它方法在可行区间内寻找 $i$，使得 $preA[i] + preB[k-i]$ 最大，记为 $f(k)$。</li>
+<li>最后找出最大可行的 $k$ 值 $k_{max}$，并输出 $f(1) \dots f(k_{\max})$。</li>
+</ol>
+<details class="folding-tag" ><summary> 查看代码 </summary>
+              <div class='content'>
+              <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="comment">// #include &lt;bits/extc++.h&gt;</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">// using namespace __gnu_pbds;</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> endl <span class="string">&#x27;\n&#x27;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ture true</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> flase false</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> pow power</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> all(x) begin(x), end(x)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> mem(a, x) memset(a, x, sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> gcd(a, b) gcdint(a, b)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> lcm(a, b) (a / gcd(a, b) * b)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> sz(x) (int)x.size()</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> lowbit(x) (x &amp; -x)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EPS 1e-7</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int ll</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> i64 long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> i128 __int128</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> fr first</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> sc second</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> tcT template &lt;class T</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> tcTU tcT, class U</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">unsyncIO</span><span class="params">()</span> </span>&#123; cin.<span class="built_in">tie</span>(<span class="number">0</span>)-&gt;<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>); &#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">setPrec</span><span class="params">()</span> </span>&#123; cout &lt;&lt; fixed &lt;&lt; <span class="built_in">setprecision</span>(<span class="number">15</span>); &#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">setIO</span><span class="params">()</span> </span>&#123; <span class="built_in">unsyncIO</span>(), <span class="built_in">setPrec</span>(); &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">gcdint</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123; <span class="keyword">return</span> b ? <span class="built_in">gcdint</span>(b, a % b) : a; &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> i128 <span class="title">gcd128</span><span class="params">(i128 a, i128 b)</span> </span>&#123; <span class="keyword">return</span> b ? <span class="built_in">gcd128</span>(b, a % b) : a; &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">cdiv</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123; <span class="keyword">return</span> a / b + ((a ^ b) &gt; <span class="number">0</span> &amp;&amp; a % b); &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">fdiv</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123; <span class="keyword">return</span> a / b - ((a ^ b) &lt; <span class="number">0</span> &amp;&amp; a % b); &#125;</span><br><span class="line"></span><br><span class="line">tcT &gt; <span class="keyword">using</span> V = vector&lt;T&gt;;</span><br><span class="line">tcTU &gt; <span class="keyword">using</span> PR = pair&lt;T, U&gt;;</span><br><span class="line">tcTU &gt; <span class="keyword">using</span> MP = map&lt;T, U&gt;;</span><br><span class="line">tcTU &gt; <span class="keyword">using</span> VP = vector&lt;pair&lt;T, U&gt;&gt;;</span><br><span class="line">tcT &gt; <span class="keyword">using</span> pqg = priority_queue&lt;T, vector&lt;T&gt;, greater&lt;T&gt;&gt;;</span><br><span class="line">tcT &gt; <span class="keyword">using</span> pql = priority_queue&lt;T, vector&lt;T&gt;, less&lt;T&gt;&gt;;</span><br><span class="line"></span><br><span class="line">tcTU &gt; istream &amp;<span class="keyword">operator</span>&gt;&gt;(istream &amp;in, pair&lt;T, U&gt; &amp;a) &#123;</span><br><span class="line">  <span class="keyword">return</span> in &gt;&gt; a.first &gt;&gt; a.second;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tcT &gt; istream &amp;<span class="keyword">operator</span>&gt;&gt;(istream &amp;in, vector&lt;T&gt; &amp;a) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;x : a) &#123;</span><br><span class="line">    in &gt;&gt; x;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> in;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tcTU &gt; ostream &amp;<span class="keyword">operator</span>&lt;&lt;(ostream &amp;out, <span class="type">const</span> pair&lt;T, U&gt; &amp;a) &#123;</span><br><span class="line">  <span class="keyword">return</span> out &lt;&lt; a.first &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; a.second;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tcTU &gt; ostream &amp;<span class="keyword">operator</span>&lt;&lt;(ostream &amp;out, <span class="type">const</span> vector&lt;pair&lt;T, U&gt;&gt; &amp;a) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;x : a) &#123;</span><br><span class="line">    out &lt;&lt; x &lt;&lt; endl;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tcT &gt; ostream &amp;<span class="keyword">operator</span>&lt;&lt;(ostream &amp;out, <span class="type">const</span> vector&lt;T&gt; &amp;a) &#123;</span><br><span class="line">  <span class="type">int</span> n = a.<span class="built_in">size</span>();</span><br><span class="line">  <span class="keyword">if</span> (!n) &#123;</span><br><span class="line">    <span class="keyword">return</span> out;</span><br><span class="line">  &#125;</span><br><span class="line">  out &lt;&lt; a[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">    out &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; a[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">std::ostream &amp;<span class="keyword">operator</span>&lt;&lt;(std::ostream &amp;os, i128 n) &#123;</span><br><span class="line">  std::string s;</span><br><span class="line">  <span class="keyword">while</span> (n) &#123;</span><br><span class="line">    s += <span class="string">&#x27;0&#x27;</span> + n % <span class="number">10</span>;</span><br><span class="line">    n /= <span class="number">10</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  std::<span class="built_in">reverse</span>(s.<span class="built_in">begin</span>(), s.<span class="built_in">end</span>());</span><br><span class="line">  <span class="keyword">return</span> os &lt;&lt; s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">power</span><span class="params">(<span class="type">int</span> a, i64 b, <span class="type">int</span> p = <span class="number">1e9</span> + <span class="number">7</span>)</span> </span>&#123;</span><br><span class="line">  <span class="type">int</span> res = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (; b; b /= <span class="number">2</span>, a = <span class="number">1LL</span> * a * a % p) &#123;</span><br><span class="line">    <span class="keyword">if</span> (b % <span class="number">2</span>) &#123;</span><br><span class="line">      res = <span class="number">1LL</span> * res * a % p;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tcT &gt; <span class="function"><span class="type">bool</span> <span class="title">ckmin</span><span class="params">(T &amp;a, <span class="type">const</span> T &amp;b)</span> </span>&#123; <span class="keyword">return</span> b &lt; a ? a = b, <span class="number">1</span> : <span class="number">0</span>; &#125;</span><br><span class="line">tcT &gt; <span class="function"><span class="type">bool</span> <span class="title">ckmax</span><span class="params">(T &amp;a, <span class="type">const</span> T &amp;b)</span> </span>&#123; <span class="keyword">return</span> a &lt; b ? a = b, <span class="number">1</span> : <span class="number">0</span>; &#125;</span><br><span class="line"></span><br><span class="line">tcT &gt; <span class="function"><span class="type">void</span> <span class="title">remDup</span><span class="params">(vector&lt;T&gt; &amp;v)</span> </span>&#123;</span><br><span class="line">  <span class="built_in">sort</span>(<span class="built_in">all</span>(v));</span><br><span class="line">  v.<span class="built_in">erase</span>(<span class="built_in">unique</span>(<span class="built_in">all</span>(v)), <span class="built_in">end</span>(v));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tcTU &gt; <span class="function"><span class="type">void</span> <span class="title">erase</span><span class="params">(T &amp;t, <span class="type">const</span> U &amp;u)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">auto</span> it = t.<span class="built_in">find</span>(u);</span><br><span class="line">  <span class="built_in">assert</span>(it != <span class="built_in">end</span>(t));</span><br><span class="line">  t.<span class="built_in">erase</span>(it);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tcTU &gt; <span class="function">T <span class="title">fstTrue</span><span class="params">(T lo, T hi, U f)</span> </span>&#123;</span><br><span class="line">  hi++;</span><br><span class="line">  <span class="built_in">assert</span>(lo &lt;= hi);</span><br><span class="line">  <span class="keyword">while</span> (lo &lt; hi) &#123;</span><br><span class="line">    T mid = lo + (hi - lo) / <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">f</span>(mid) ? hi = mid : lo = mid + <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> lo;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tcTU &gt; <span class="function">T <span class="title">lstTrue</span><span class="params">(T lo, T hi, U f)</span> </span>&#123;</span><br><span class="line">  lo--;</span><br><span class="line">  <span class="built_in">assert</span>(lo &lt;= hi);</span><br><span class="line">  <span class="keyword">while</span> (lo &lt; hi) &#123;</span><br><span class="line">    T mid = lo + (hi - lo + <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">f</span>(mid) ? lo = mid : hi = mid - <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> lo;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">constexpr</span> <span class="type">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="type">int</span> inf = <span class="number">0x7fffffff</span>;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="type">int</span> N = <span class="number">1.01e6</span>;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="type">int</span> M = <span class="number">2.01e3</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> LOCAL</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;C:/Users/70510/Desktop/Others/algo/debug.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> debug(...) 42</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">buildPrefix</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;arr)</span> </span>&#123;</span><br><span class="line">  <span class="built_in">sort</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>());</span><br><span class="line">  <span class="type">int</span> half = arr.<span class="built_in">size</span>() / <span class="number">2</span>;</span><br><span class="line">  <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">diff</span><span class="params">(half)</span></span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; half; i++) &#123;</span><br><span class="line">    diff[i] = arr[arr.<span class="built_in">size</span>() - <span class="number">1</span> - i] - arr[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">sort</span>(diff.<span class="built_in">begin</span>(), diff.<span class="built_in">end</span>(), <span class="built_in">greater</span>&lt;<span class="type">int</span>&gt;());</span><br><span class="line">  <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">prefix</span><span class="params">(half + <span class="number">1</span>, <span class="number">0LL</span>)</span></span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= half; i++) &#123;</span><br><span class="line">    prefix[i] = prefix[i - <span class="number">1</span>] + diff[i - <span class="number">1</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> prefix;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">ternaryMax</span><span class="params">(<span class="type">const</span> vector&lt;<span class="type">int</span>&gt; &amp;A, <span class="type">const</span> vector&lt;<span class="type">int</span>&gt; &amp;B, <span class="type">int</span> k, <span class="type">int</span> low,</span></span></span><br><span class="line"><span class="params"><span class="function">               <span class="type">int</span> high)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (low &gt; high) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">auto</span> G = [&amp;](<span class="type">int</span> x) &#123; <span class="keyword">return</span> A[x] + B[k - x]; &#125;;</span><br><span class="line">  <span class="keyword">while</span> (high - low &gt;= <span class="number">3</span>) &#123;</span><br><span class="line">    <span class="type">int</span> m1 = low + (high - low) / <span class="number">3</span>;</span><br><span class="line">    <span class="type">int</span> m2 = high - (high - low) / <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">G</span>(m1) &lt; <span class="built_in">G</span>(m2))</span><br><span class="line">      low = m1 + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      high = m2 - <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="type">int</span> ret = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = low; i &lt;= high; i++) &#123;</span><br><span class="line">    ret = <span class="built_in">max</span>(ret, <span class="built_in">G</span>(i));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="type">int</span> n, m;</span><br><span class="line">  cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">  <span class="function">vector&lt;<span class="type">long</span> <span class="type">long</span>&gt; <span class="title">a</span><span class="params">(n)</span>, <span class="title">b</span><span class="params">(m)</span></span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    cin &gt;&gt; a[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; m; j++) &#123;</span><br><span class="line">    cin &gt;&gt; b[j];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  vector&lt;<span class="type">long</span> <span class="type">long</span>&gt; preA = <span class="built_in">buildPrefix</span>(a);</span><br><span class="line">  vector&lt;<span class="type">long</span> <span class="type">long</span>&gt; preB = <span class="built_in">buildPrefix</span>(b);</span><br><span class="line">  <span class="type">int</span> maxPickA = (<span class="type">int</span>)preA.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">  <span class="type">int</span> maxPickB = (<span class="type">int</span>)preB.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">  <span class="type">int</span> kmax = <span class="built_in">min</span>((n + m) / <span class="number">3LL</span>, (<span class="type">long</span> <span class="type">long</span>)maxPickA + maxPickB);</span><br><span class="line">  <span class="function">vector&lt;<span class="type">long</span> <span class="type">long</span>&gt; <span class="title">f</span><span class="params">(kmax + <span class="number">1</span>, <span class="number">0LL</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">1</span>; k &lt;= kmax; k++) &#123;</span><br><span class="line">    <span class="comment">// i的可行区间</span></span><br><span class="line">    <span class="comment">// 要满足 i + (k−i) = k，2*i + (k−i) &lt;= n =&gt; i &lt;= n-k</span></span><br><span class="line">    <span class="comment">//           i + 2*(k−i) &lt;= m =&gt; i &gt;= 2*k - m</span></span><br><span class="line">    <span class="comment">// 同时 i &gt;= 0, i &lt;= k, i &lt;= maxPickA, k−i &lt;= maxPickB</span></span><br><span class="line">    <span class="type">int</span> low = <span class="built_in">max</span>(<span class="number">0LL</span>, (<span class="type">int</span>)<span class="built_in">max</span>((<span class="type">long</span> <span class="type">long</span>)k - maxPickB, <span class="number">2LL</span> * k - m));</span><br><span class="line">    <span class="type">int</span> high = <span class="built_in">min</span>(k, <span class="built_in">min</span>(maxPickA, n - k));</span><br><span class="line">    <span class="keyword">if</span> (low &lt;= high) &#123;</span><br><span class="line">      <span class="keyword">auto</span> bestVal = <span class="built_in">ternaryMax</span>(preA, preB, k, low, high);</span><br><span class="line">      f[k] = bestVal;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span> (kmax &gt; <span class="number">0</span> &amp;&amp; f[kmax] == <span class="number">0</span>) kmax--;</span><br><span class="line"></span><br><span class="line">  cout &lt;&lt; kmax &lt;&lt; endl;</span><br><span class="line">  <span class="keyword">if</span> (kmax &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= kmax; i++) &#123;</span><br><span class="line">      cout &lt;&lt; f[i] &lt;&lt; (i &lt; kmax ? <span class="string">&#x27; &#x27;</span> : <span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">setIO</span>();</span><br><span class="line">  <span class="type">int</span> tt = <span class="number">1</span>;</span><br><span class="line">  cin &gt;&gt; tt;</span><br><span class="line">  <span class="keyword">while</span> (tt--) &#123;</span><br><span class="line">    <span class="built_in">solve</span>();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+              </div>
+            </details></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="LANSGANBS (不要点T_T 网站会炸)">LANSGANBS</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.lansganbs.cn/posts/1f3637b8.html">https://www.lansganbs.cn/posts/1f3637b8.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.lansganbs.cn" target="_blank">LANSGANBS</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/XCPC/">XCPC</a></div><div class="post_share"><div class="social-share" data-image="https://cdn-1.webcatalog.io/catalog/codeforces/codeforces-icon-filled-256.png?v=1675595107494" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><link rel="stylesheet" href="/css/coin/coin.css" media="defer" onload="this.media='all'"/><div class="post-reward"><button class="tip-button reward-button"><span class="tip-button__text">不给糖果就捣蛋</span><div class="coin-wrapper"><div class="coin"><div class="coin__middle"></div><div class="coin__back"></div><div class="coin__front"></div></div></div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://www.helloimg.com/i/2024/12/30/6772af9840532.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://www.helloimg.com/i/2024/12/30/6772af9840532.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://www.helloimg.com/i/2024/12/30/6772af9848da2.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://www.helloimg.com/i/2024/12/30/6772af9848da2.png" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></button></div><audio id="coinAudio" src="https://cdn.cbd.int/akilar-candyassets@1.0.36/audio/aowu.m4a"></audio><script defer="defer" src="/js/coin/coin.js"></script><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/65b2d74f.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://image.lansganbs.cn/4b466203c76f7407a370493f61dda68.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">分块莫队</div></div></a></div><div class="next-post pull-right"><a href="/posts/dd7a46fd.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">复现项目时遇到的相关问题汇总</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/fdad289b.html" title="Bitset Hash Pbds"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://image.lansganbs.cn/9b58389e874cb4e9a2746820034653e.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-30</div><div class="title">Bitset Hash Pbds</div></div></a></div><div><a href="/posts/e9186a1f.html" title="单调栈&amp;单调队列"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn-1.webcatalog.io/catalog/codeforces/codeforces-icon-filled-256.png?v=1675595107494" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-04</div><div class="title">单调栈&amp;单调队列</div></div></a></div><div><a href="/posts/d71d8d32.html" title="关于算法竞赛中代码模版的规范化问题"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn-1.webcatalog.io/catalog/codeforces/codeforces-icon-filled-256.png?v=1675595107494" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-31</div><div class="title">关于算法竞赛中代码模版的规范化问题</div></div></a></div><div><a href="/posts/ae028ed9.html" title="个人训练赛20241211"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://www.helloimg.com/i/2024/12/31/6773e86e6ae45.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-31</div><div class="title">个人训练赛20241211</div></div></a></div><div><a href="/posts/65b2d74f.html" title="分块莫队"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://image.lansganbs.cn/4b466203c76f7407a370493f61dda68.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-30</div><div class="title">分块莫队</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://www.helloimg.com/i/2025/01/04/677943139e15f.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">LANSGANBS</div><div class="author-info__description">LANSGANBS's Blog</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/LANSGANBS"><i class="fab fa-github"></i><span>🐺相信武魂真身🐺</span><i class="faa-passing animated" style="padding-left:20px;display:inline-block;vertical-align:middle;"><svg class="icon" style="height:28px;width:28px;fill:currentColor;position:relative;top:5px"><use xlink:href="#icon-xiaoqiche"></use></svg></i></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/LANSGANBS" target="_blank" title="Github"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-github"></use></svg></a><a class="social-icon faa-parent animated-hover" href="https://steamcommunity.com/profiles/76561199480252977/" target="_blank" title="Steam"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-steam"></use></svg></a><a class="social-icon faa-parent animated-hover" href="/atom.xml" target="_blank" title="RSS"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-RSS"></use></svg></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/431233142" target="_blank" title="BiliBili"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-bilibili"></use></svg></a><a class="social-icon faa-parent animated-hover" href="https://qm.qq.com/q/OXRmVdqPAs" target="_blank" title="QQ"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-QQ"></use></svg></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><center>
+  <b>
+    本站在 Edge 浏览器上显示效果最佳，其他浏览器可能存在兼容性差异<br>
+
+    --- 主域名 ---<br>
+    <a href="https://www.lansganbs.cn/" title="此线路部署于Vercel" class="anno_content">
+      <font color="#5ea6e5">lansganbs.cn</font>
+    </a><br>
+
+    --- 备用域名 ---<br>
+    <a target="_blank" rel="noopener" href="https://lansganbs.github.io/" title="此线路部署于Github" class="anno_content">
+      <font color="#5ea6e5">lansganbs.github.io</font>
+    </a><br>
+    <a target="_blank" rel="noopener" href="https://lansganbs.us.kg/" title="此线路部署于Vercel" class="anno_content">
+      <font color="#5ea6e5">lansganbs.us.kg</font>
+    </a>
+    <br>
+  </b>
+</center>
+</div><div id="welcome-info"></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/e7b1f3d7.html" title="米津玄师《Lemon》歌词及罗马音发音"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://image.lansganbs.cn/f0199c4cc60b97e55e6c671a8664e1f4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="米津玄师《Lemon》歌词及罗马音发音"/></a><div class="content"><a class="title" href="/posts/e7b1f3d7.html" title="米津玄师《Lemon》歌词及罗马音发音">米津玄师《Lemon》歌词及罗马音发音</a><time datetime="2025-05-20T06:20:13.000Z" title="发表于 2025-05-20 14:20:13">2025-05-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1c6371d0.html" title="葬送的芙莉莲ED《Anytime Anywhere》歌词及罗马音发音"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://image.lansganbs.cn/28ae26dfbc7d14e6538d7de2aeb1fb15.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="葬送的芙莉莲ED《Anytime Anywhere》歌词及罗马音发音"/></a><div class="content"><a class="title" href="/posts/1c6371d0.html" title="葬送的芙莉莲ED《Anytime Anywhere》歌词及罗马音发音">葬送的芙莉莲ED《Anytime Anywhere》歌词及罗马音发音</a><time datetime="2025-05-19T05:07:22.000Z" title="发表于 2025-05-19 13:07:22">2025-05-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/42dc3d9e.html" title="BanG Dream! It's MyGO!!!!!插曲《春日影》平假名及罗马音发音"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.moegirl.tw/common/0/00/Haruhikage%28Crychic%29.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="BanG Dream! It's MyGO!!!!!插曲《春日影》平假名及罗马音发音"/></a><div class="content"><a class="title" href="/posts/42dc3d9e.html" title="BanG Dream! It's MyGO!!!!!插曲《春日影》平假名及罗马音发音">BanG Dream! It's MyGO!!!!!插曲《春日影》平假名及罗马音发音</a><time datetime="2025-05-17T04:42:42.000Z" title="发表于 2025-05-17 12:42:42">2025-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/fdad289b.html" title="Bitset Hash Pbds"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://image.lansganbs.cn/9b58389e874cb4e9a2746820034653e.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Bitset Hash Pbds"/></a><div class="content"><a class="title" href="/posts/fdad289b.html" title="Bitset Hash Pbds">Bitset Hash Pbds</a><time datetime="2025-03-30T10:16:16.000Z" title="发表于 2025-03-30 18:16:16">2025-03-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/e9186a1f.html" title="单调栈&amp;单调队列"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn-1.webcatalog.io/catalog/codeforces/codeforces-icon-filled-256.png?v=1675595107494" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="单调栈&amp;单调队列"/></a><div class="content"><a class="title" href="/posts/e9186a1f.html" title="单调栈&amp;单调队列">单调栈&amp;单调队列</a><time datetime="2025-01-04T04:50:01.000Z" title="发表于 2025-01-04 12:50:01">2025-01-04</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By LANSGANBS</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="share" type="button" title="分享链接" onclick="share()"><i class="fas fa-share-nodes"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i><span id="percent">0<span>%</span></span></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.lansganbs.cn/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.lansganbs.cn/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><div class="aplayer no-destroy" 
+     data-id="8152976493" 
+     data-server="netease" 
+     data-type="playlist"
+     data-order="list" 
+     data-fixed="true" 
+     data-preload="auto" 
+     data-autoplay="false" 
+     data-mutex="true">
+</div>
+<script defer data-pjax src="/js/readPercent.js"></script><script async src="/js/fps.js"></script><script defer src="/js/cursor.js"></script><script async src="//at.alicdn.com/t/font_2264842_b004iy0kk2b.js"></script><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script async src="https://cdn1.tianli0.top/npm/vue@2.6.14/dist/vue.min.js"></script><script async src="https://cdn1.tianli0.top/npm/element-ui@2.15.6/lib/index.js"></script><script defer src="/js/custom.js"></script><script defer src="/js/debounce.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script><script src="/js/share.js"></script><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer data-pjax src="/js/cat.js"></script><script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script><script async data-pjax src="/js/txmap.js"></script><script defer src="/gitcalendar/js/gitcalendar.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><div class="app-refresh" id="app-refresh" style="position: fixed;top: -2.2rem;left: 0;right: 0;z-index: 99999;padding: 0 1rem;font-size: 15px;height: 2.2rem;transition: all 0.3s ease;"><div class="app-refresh-wrap" style=" display: flex;color: #fff;height: 100%;align-items: center;justify-content: center;"><label>✨ 有新文章啦！ 👉</label><a href="javascript:void(0)" onclick="location.reload()"><span style="color: #fff;text-decoration: underline;cursor: pointer;">🍗点击食用🍔</span></a></div></div><script>if ('serviceWorker' in navigator) {
+if (navigator.serviceWorker.controller) {
+navigator.serviceWorker.addEventListener('controllerchange', function() {
+showNotification()
+})
+}
+window.addEventListener('load', function() {
+navigator.serviceWorker.register('/sw.js')
+})
+}
+function showNotification() {
+if (GLOBAL_CONFIG.Snackbar) {
+var snackbarBg =
+document.documentElement.getAttribute('data-theme') === 'light' ?
+GLOBAL_CONFIG.Snackbar.bgLight :
+GLOBAL_CONFIG.Snackbar.bgDark
+var snackbarPos = GLOBAL_CONFIG.Snackbar.position
+Snackbar.show({
+text: '✨ 有新文章啦！ 👉',
+backgroundColor: snackbarBg,
+duration: 500000,
+pos: snackbarPos,
+actionText: '🍗点击食用🍔',
+actionTextColor: '#fff',
+onActionClick: function(e) {
+location.reload()
+},
+})
+} else {
+var showBg =
+document.documentElement.getAttribute('data-theme') === 'light' ?
+'#3b70fc' :
+'#1f1f1f'
+var cssText = `top: 0; background: ${showBg};`
+document.getElementById('app-refresh').style.cssText = cssText
+}
+}</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script>
+    // 全局变量声明区域
+    var fdata = {
+      apiurl: 'https://hexo-friendcircle-api-ai9d4hwad-anzhiyu-c.vercel.app/api',
+      initnumber: 20, //【可选】页面初始化展示文章数量
+      stepnumber: 10, //【可选】每次加载增加的篇数
+      error_img: 'https://npm.elemecdn.com/akilar-candyassets/image/404.gif' //【可选，头像图片加载失败时的默认头像】
+    }
+    //存入本地存储
+    localStorage.setItem("fdatalist",JSON.stringify(fdata))
+    </script>
+    <script defer src="https://npm.elemecdn.com/hexo-filter-fcircle/assets/js/fetch.min.js"></script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v6.2.0" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题版本Butterfly_v4.3.1" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" data-title="本站采用多线部署，主线路托管于Vercel" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel" alt=""/></a><a class="github-badge" target="_blank" href="https://dashboard.4everland.org/" style="margin-inline:5px" data-title="本站采用多线部署，备用线路托管于4EVERLAND" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-4EVERLAND-22DDDD?style=flat&amp;logo=IPFS" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/LANSGANBS" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/js/runtime/runtime.min.js"></script><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.8/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = '5a67cb505dc74cf296f2b45ee6a4be00';
+  var gaud_map_key = 'b25abfad82b5329a6bfabdf0dcb0af34';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '126.61675,45.712802';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.8/lib/clock.min.js"></script><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/65b2d74f.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://image.lansganbs.cn/4b466203c76f7407a370493f61dda68.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-12-30</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/65b2d74f.html&quot;);" href="javascript:void(0);" alt="">分块莫队</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/65b2d74f.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/fdad289b.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://image.lansganbs.cn/9b58389e874cb4e9a2746820034653e.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2025-03-30</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/fdad289b.html&quot;);" href="javascript:void(0);" alt="">Bitset Hash Pbds</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/fdad289b.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/e9186a1f.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn-1.webcatalog.io/catalog/codeforces/codeforces-icon-filled-256.png?v=1675595107494" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2025-01-04</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/e9186a1f.html&quot;);" href="javascript:void(0);" alt="">单调栈&amp;单调队列</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/e9186a1f.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/d71d8d32.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn-1.webcatalog.io/catalog/codeforces/codeforces-icon-filled-256.png?v=1675595107494" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-12-31</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/d71d8d32.html&quot;);" href="javascript:void(0);" alt="">关于算法竞赛中代码模版的规范化问题</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/d71d8d32.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('article-sort-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__slideInRight');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow_init.js"></script><script async src="/js/ali_font.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body></html>
