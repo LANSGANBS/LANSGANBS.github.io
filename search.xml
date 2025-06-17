@@ -343,10 +343,10 @@
     
     <entry>
       <title></title>
-      <link href="/js/debounce.js"/>
-      <url>/js/debounce.js</url>
+      <link href="/js/custom.js"/>
+      <url>/js/custom.js</url>
       
-        <content type="html"><![CDATA[// 防抖全局计时器let TT = null; // 用来控制事件的触发// 防抖函数: fn -> 逻辑, time -> 防抖时间function debounce(fn, time) {    if (TT !== null) clearTimeout(TT); // 如果有正在运行的计时器，先清除    TT = setTimeout(fn, time); // 设置新的计时器}// 复制提醒document.addEventListener("copy", function () {    debounce(function () {        new Vue({            data: function () {                this.$notify({                    title: "哎嘿！复制成功🍬",                    message: "若要转载最好保留原文链接哦",                    position: 'top-left',                    offset: 50,                    showClose: true,                    type: "success",                    duration: 5000                });            }        });    }, 300); // 300ms 的防抖时间});]]></content>
+        <content type="html"><![CDATA[document.addEventListener('keydown', function (event) {    if (event.key === 'F12') {        new Vue({            data: function () {                this.$notify({                    title: "你已被发现😜",                    message: "小伙子，扒源记住要遵循GPL协议！",                    position: 'top-left',                    offset: 50,                    showClose: true,                    type: "warning",                    duration: 5000                });            }        });    }});]]></content>
       
     </entry>
     
@@ -354,10 +354,10 @@
     
     <entry>
       <title></title>
-      <link href="/js/custom.js"/>
-      <url>/js/custom.js</url>
+      <link href="/js/debounce.js"/>
+      <url>/js/debounce.js</url>
       
-        <content type="html"><![CDATA[document.addEventListener('keydown', function (event) {    if (event.key === 'F12') {        new Vue({            data: function () {                this.$notify({                    title: "你已被发现😜",                    message: "小伙子，扒源记住要遵循GPL协议！",                    position: 'top-left',                    offset: 50,                    showClose: true,                    type: "warning",                    duration: 5000                });            }        });    }});]]></content>
+        <content type="html"><![CDATA[// 防抖全局计时器let TT = null; // 用来控制事件的触发// 防抖函数: fn -> 逻辑, time -> 防抖时间function debounce(fn, time) {    if (TT !== null) clearTimeout(TT); // 如果有正在运行的计时器，先清除    TT = setTimeout(fn, time); // 设置新的计时器}// 复制提醒document.addEventListener("copy", function () {    debounce(function () {        new Vue({            data: function () {                this.$notify({                    title: "哎嘿！复制成功🍬",                    message: "若要转载最好保留原文链接哦",                    position: 'top-left',                    offset: 50,                    showClose: true,                    type: "success",                    duration: 5000                });            }        });    }, 300); // 300ms 的防抖时间});]]></content>
       
     </entry>
     
